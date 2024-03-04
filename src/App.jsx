@@ -1,5 +1,15 @@
+
+
+
+import Users from "./components/users/Users";
+import { GlobalStyles } from "./styles/GlobalStyles";
+
 const App = () => {
-	return <h1>Núcleo de la aplicación</h1>;
+	return (
+	<>
+	<GlobalStyles/>
+	<Users/>
+	</>)
 };
 
 export default App;

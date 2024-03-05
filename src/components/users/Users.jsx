@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { USERS } from "../../constants/users";
+import { StyledButton, StyledText, StyledUsers } from "./users.styles";
 
 
 const Users = ()=>{
@@ -7,13 +8,17 @@ const Users = ()=>{
     return(
         
         <>
+        <StyledUsers>
+       
             <h1>Slide Users</h1>
             <img src={USERS[user].profileImage} alt="" />
             <h2>Name: {USERS[user].name} </h2>
-            <p>Username: {USERS[user].username}</p>
-            <p>Email: {USERS[user].email}</p>
-            <button disabled = {user===0} onClick={()=>previousUser(user, setUser)}>Previous</button>
-            <button disabled = {user===USERS.length-1} onClick={()=>nextUser(user, setUser)}>Next</button>
+            <StyledText>Username: {USERS[user].username}</StyledText>
+            <StyledText>Email: {USERS[user].email}</StyledText>
+            <StyledButton disabled = {user===0} onClick={()=>previousUser(user, setUser)}>Previous</StyledButton>
+            <StyledButton disabled = {user===USERS.length-1} onClick={()=>nextUser(user, setUser)}>Next</StyledButton>
+
+        </StyledUsers>
         </>
     )
 }
